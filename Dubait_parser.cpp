@@ -1,20 +1,28 @@
 #include "Dubait_parser.h"
 
+using namespace std;
+void Dubait_parser(){
+    vector<long long> F(MAX_SUM + 1, 0);
+    for (int i = 0; i < BASE * BASE * BASE * BASE * BASE * BASE; ++i) {
+        int t = i;
+        int sum = 0;
+        
 
+        for (int j = 0; j < HALF; ++j) {
+            sum += t % BASE;
+            t /= BASE;
+        }
+        F[sum]++;
+    }
 
-int part_sum(const vector<int> &num, int begin, int length){
-int sum = 0;
-
-for(int i = begin;i<length+begin;i++){
-    sum+=num[i];
+    long long count = 0;
+    for (int i = 0; i <= MAX_SUM; ++i) {
+        count += F[i] * F[i];
+    }
+    count *= BASE;
+    cout <<"Количество красивых чисел : "<< count << endl;
 }
-return sum;
-}
-
-int main(){
-
-
-
-
+int main() {
+    Dubait_parser();
     return 0;
 }

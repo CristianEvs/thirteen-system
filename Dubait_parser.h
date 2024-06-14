@@ -1,8 +1,6 @@
 #include <iostream>
 #include <vector>
 
-using namespace std;
-
-const int FIX_LENGHT = 13;
-const int PART_LENGTH = 6;
-const int NOTATION = 13;
+const int BASE = 13;
+const int HALF = 6;
+const int MAX_SUM = 6 * (BASE - 1);

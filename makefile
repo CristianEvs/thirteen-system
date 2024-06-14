@@ -1,4 +1,5 @@
-CC = g++ -std=c++17 -Wall -Werror -Wextra
+CC = g++ -std=c++17 
+#-Wall -Werror -Wextra
 
 FILES = Dubait_parser.cpp
 
@@ -18,4 +19,4 @@ format:
 	clang-format -i style=Google *.cpp *.h
 
 clean:
-	rm -rm *.gcna *.gcdo $(TARGET) *.o
+	rm -rf $(TARGET)
